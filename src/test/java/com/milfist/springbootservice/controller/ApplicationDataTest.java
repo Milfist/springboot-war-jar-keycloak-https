@@ -1,6 +1,6 @@
 package com.milfist.springbootservice.controller;
 
-import com.milfist.springbootservice.SpringBootApplication;
+import com.milfist.springbootservice.DataApplication;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebAppConfiguration
-@SpringBootTest(classes = SpringBootApplication.class)
+@SpringBootTest(classes = DataApplication.class)
 @ActiveProfiles("local")
 class ApplicationDataTest {
 
@@ -33,7 +33,7 @@ class ApplicationDataTest {
 
     @Test
     void givenCorrectID_whenCallEndPoint_thenOk() throws Exception {
-        mockMvc.perform(get("/options/menu")
+        mockMvc.perform(get("/data/data")
             .contentType("application/json; charset=UTF-8")
             .header("accept", "*/*"))
             .andExpect(status().isOk());
@@ -41,7 +41,7 @@ class ApplicationDataTest {
 
     @Test
     void givenWrongID_whenCallEndPoint_then404() throws Exception {
-        mockMvc.perform(get("/options/menu2")
+        mockMvc.perform(get("/data/data2")
             .contentType("application/json; charset=UTF-8")
             .header("accept", "*/*"))
             .andExpect(status().isNotFound());
@@ -49,7 +49,7 @@ class ApplicationDataTest {
 
     @Test
     void givenCorrectID_but_empty_file_whenCallEndPoint_then204() throws Exception {
-        mockMvc.perform(get("/options/menu_null")
+        mockMvc.perform(get("/data/data_null")
             .contentType("application/json; charset=UTF-8")
             .header("accept", "*/*"))
             .andExpect(status().isNoContent());

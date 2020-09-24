@@ -13,17 +13,14 @@ import java.nio.charset.StandardCharsets;
 @Service
 public class DataByIdImpl implements DataById {
 
-  @Value("${service.options.path}")
-  private String optionsPath;
-
   @Override
-  public String getOptionsById(String id) throws IOException {
+  public String getDataById(String id) throws IOException {
     byte[] optionsById = FileCopyUtils.copyToByteArray(getInputStreamFromResourceById(id));
     return new String(optionsById, StandardCharsets.UTF_8);
   }
 
   private InputStream getInputStreamFromResourceById(String id) throws IOException {
-    Resource resource = new ClassPathResource(String.format("%s%s.json", optionsPath, id));
+    Resource resource = new ClassPathResource(String.format("%s.json", id));
     return resource.getInputStream();
   }
 }

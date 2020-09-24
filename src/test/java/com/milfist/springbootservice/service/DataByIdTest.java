@@ -1,7 +1,6 @@
 package com.milfist.springbootservice.service;
 
 import com.google.gson.Gson;
-import lombok.Data;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,37 +13,37 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ActiveProfiles("local")
 @SpringBootTest
-class MenuOptionsByIdTest {
+class DataByIdTest {
 
   @Autowired
-  DataById menuOptionsById;
+  DataById dataById;
 
   @Test
   void givenCorrectID_call_getOptionsById_thenReturn_OK() throws Exception {
-      String json = menuOptionsById.getOptionsById("menu");
-      Menu menu = new Gson().fromJson(json, Menu.class);
+      String json = dataById.getDataById("data");
+      Data data = new Gson().fromJson(json, Data.class);
 
-      assertAll("menu",
-          ()-> assertEquals("General", menu.getTitle()),
-          ()-> assertEquals(0, menu.getOptions().size())
+      assertAll("data",
+          ()-> assertEquals("Servicio", data.getTitle()),
+          ()-> assertEquals(0, data.getOptions().size())
       );
   }
 
   @Test
   void givenWrongID_call_getOptionsById_thenReturn_FileNorFoundException() {
-    assertThrows(FileNotFoundException.class, () -> menuOptionsById.getOptionsById("menu2"));
+    assertThrows(FileNotFoundException.class, () -> dataById.getDataById("data2"));
   }
 
   @Test
   void givenCorrectID_withEmptyFile_thenReturnEmptyString() throws Exception {
-    String json = menuOptionsById.getOptionsById("menu_null");
+    String json = dataById.getDataById("data_null");
     assertEquals("", json);
   }
 
 }
 
-@Data
-class Menu {
+@lombok.Data
+class Data {
   private String title;
   private List<String> options;
   private Object security;

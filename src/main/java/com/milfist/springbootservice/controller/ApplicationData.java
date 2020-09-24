@@ -12,15 +12,15 @@ import java.io.IOException;
 @RestController
 public class ApplicationData {
 
-  private final DataById menuOptionsById;
+  private final DataById dataById;
 
-  public ApplicationData(DataById menuOptionsById) {
-    this.menuOptionsById = menuOptionsById;
+  public ApplicationData(DataById dataById) {
+    this.dataById = dataById;
   }
 
   @GetMapping(path = "/data/{id}", produces = { "application/json; charset=UTF-8" }, name = "getOptionsById")
   public ResponseEntity<String> getMenuOptionsById(@PathVariable String id) throws IOException {
-    String menuOptions = menuOptionsById.getOptionsById(id);
+    String menuOptions = dataById.getDataById(id);
     return menuOptions.isEmpty() ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(menuOptions, HttpStatus.OK);
   }
 

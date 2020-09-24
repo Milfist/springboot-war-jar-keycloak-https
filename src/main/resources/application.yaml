@@ -26,12 +26,7 @@ keycloak:
 logging:
   level.*: debug
   file:
-    name: logs
     path: target/logs
-
-service:
-  options:
-    path: ""
 
 ---
 
@@ -52,10 +47,5 @@ keycloak:
 logging:
   level: error
   file:
-    name: logs
-    path: logs
+    path: target/logs
 
-service:
-  options:
-    path: "/datos/APPS-TOMCAT/escrispa/properties/
-"
