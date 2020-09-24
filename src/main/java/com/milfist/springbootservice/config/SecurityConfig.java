@@ -1,4 +1,4 @@
-package es.caser.desktopmenuservice.config;
+package com.milfist.springbootservice.config;
 
 
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
@@ -44,7 +44,7 @@ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
     super.configure(http);
     http.authorizeRequests()
-        .antMatchers("/options/*")
+        .antMatchers("/data/*")
         .authenticated()
 //        .hasAnyRole()
         //.hasRole("user")

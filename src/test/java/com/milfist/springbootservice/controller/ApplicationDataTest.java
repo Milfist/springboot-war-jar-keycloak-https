@@ -1,6 +1,6 @@
-package es.caser.desktopmenuservice.controller;
+package com.milfist.springbootservice.controller;
 
-import es.caser.desktopmenuservice.DesktopMenuServiceApplication;
+import com.milfist.springbootservice.SpringBootApplication;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +15,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebAppConfiguration
-@SpringBootTest(classes = DesktopMenuServiceApplication.class)
+@SpringBootTest(classes = SpringBootApplication.class)
 @ActiveProfiles("local")
-class ApplicationMenuTest {
+class ApplicationDataTest {
 
     @Autowired
     private WebApplicationContext webApplicationContext;

@@ -8,11 +8,11 @@
     <version>2.3.2.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>es.caser</groupId>
-  <artifactId>desktop-menu-service</artifactId>
+  <groupId>com.milfist</groupId>
+  <artifactId>springboot-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>desktop-menu-service</name>
-  <description>Servicio para la carga de menus en escritorio Angular</description>
+  <name>springboot-service</name>
+  <description>Servicio SpringBoot 2 con configuración SSL, Keycloak, perfiles para WAR y JAR</description>
   <packaging>${packaging.type}</packaging>
 
   <properties>

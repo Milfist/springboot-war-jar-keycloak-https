@@ -1,4 +1,4 @@
-package es.caser.desktopmenuservice.config;
+package com.milfist.springbootservice.config;
 
 import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +16,7 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 @Log4j2
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
-public final class MenuExceptionHandler {
+public final class AppExceptionHandler {
 
     @ExceptionHandler(FileNotFoundException.class)
     protected ResponseEntity<String> handleFileNotFound(FileNotFoundException ex) {

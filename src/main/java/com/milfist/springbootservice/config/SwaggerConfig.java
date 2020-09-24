@@ -1,4 +1,4 @@
-package es.caser.desktopmenuservice.config;
+package com.milfist.springbootservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

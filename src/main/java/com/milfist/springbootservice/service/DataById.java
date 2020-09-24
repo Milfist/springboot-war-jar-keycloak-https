@@ -1,7 +1,7 @@
-package es.caser.desktopmenuservice.service;
+package com.milfist.springbootservice.service;
 
 import java.io.IOException;
 
-public interface MenuOptionsById {
+public interface DataById {
   String getOptionsById(String id) throws IOException;
 }

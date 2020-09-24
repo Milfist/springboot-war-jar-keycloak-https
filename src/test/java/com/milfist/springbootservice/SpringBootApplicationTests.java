@@ -1,10 +1,10 @@
-package es.caser.desktopmenuservice;
+package com.milfist.springbootservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DesktopMenuServiceApplicationTests {
+class SpringBootApplicationTests {
 
   @Test
   void contextLoads() {

@@ -1,6 +1,6 @@
-package es.caser.desktopmenuservice.controller;
+package com.milfist.springbootservice.controller;
 
-import es.caser.desktopmenuservice.service.MenuOptionsById;
+import com.milfist.springbootservice.service.DataById;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-public class ApplicationMenu {
+public class ApplicationData {
 
-  private final MenuOptionsById menuOptionsById;
+  private final DataById menuOptionsById;
 
-  public ApplicationMenu(MenuOptionsById menuOptionsById) {
+  public ApplicationData(DataById menuOptionsById) {
     this.menuOptionsById = menuOptionsById;
   }
 
-  @GetMapping(path = "/options/{id}", produces = { "application/json; charset=UTF-8" }, name = "getOptionsById")
+  @GetMapping(path = "/data/{id}", produces = { "application/json; charset=UTF-8" }, name = "getOptionsById")
   public ResponseEntity<String> getMenuOptionsById(@PathVariable String id) throws IOException {
     String menuOptions = menuOptionsById.getOptionsById(id);
     return menuOptions.isEmpty() ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(menuOptions, HttpStatus.OK);

@@ -1,4 +1,4 @@
-package es.caser.desktopmenuservice.service;
+package com.milfist.springbootservice.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 @Service
-public class MenuOptionsByIdImpl implements MenuOptionsById {
+public class DataByIdImpl implements DataById {
 
   @Value("${service.options.path}")
   private String optionsPath;

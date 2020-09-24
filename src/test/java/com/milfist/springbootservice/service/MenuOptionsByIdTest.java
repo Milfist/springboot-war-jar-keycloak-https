@@ -1,4 +1,4 @@
-package es.caser.desktopmenuservice.service;
+package com.milfist.springbootservice.service;
 
 import com.google.gson.Gson;
 import lombok.Data;
@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MenuOptionsByIdTest {
 
   @Autowired
-  MenuOptionsById menuOptionsById;
+  DataById menuOptionsById;
 
   @Test
   void givenCorrectID_call_getOptionsById_thenReturn_OK() throws Exception {
