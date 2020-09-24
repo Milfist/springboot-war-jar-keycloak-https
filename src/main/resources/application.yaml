@@ -1,0 +1,61 @@
+spring:
+  profiles:
+    active: '@spring.profiles.active@'
+
+---
+spring:
+  profiles: local
+
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store-type: PKCS12 
+    key-store: classpath:keystore/microservice.p12 
+    key-store-password: password 
+    key-alias: microservice
+
+#Keycloak Configuration
+keycloak:
+  auth-server-url: http://localhost:8080/auth
+  realm: angular
+  resource: springboot-test
+  bearer-only: true
+  ssl-required: external
+
+logging:
+  level.*: debug
+  file:
+    name: logs
+    path: target/logs
+
+service:
+  options:
+    path: ""
+
+---
+
+spring:
+  profiles: int
+
+server:
+  port: 8081
+
+#Keycloak Configuration
+keycloak:
+  auth-server-url: http://localhost:8080/auth
+  realm: angular
+  resource: springboot-test
+  bearer-only: true
+  ssl-required: external
+
+logging:
+  level: error
+  file:
+    name: logs
+    path: logs
+
+service:
+  options:
+    path: "/datos/APPS-TOMCAT/escrispa/properties/
+"

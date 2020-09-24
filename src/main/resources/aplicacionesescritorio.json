@@ -1,0 +1,30 @@
+[{
+  "id": "appdemo1",
+  "title": "Demo maquetación",
+  "baseurl":"http://covian.caser.local:10080/appdemo1",
+  "servicesbaseurl":"http://covian.caser.local:10080/appdemo1",
+  "url": "http://covian.caser.local:10080/appdemo1/data/opcionesmenu.json"
+},
+  {
+    "id": "appbusquedas",
+    "title": "Búsquedas",
+    "baseurl":"/appbusquedas",
+    "servicesbaseurl":"/appbusquedas",
+    "url": "/appbusquedas/data/opcionesmenu.json"
+  },
+  {
+    "id": "appdummy3",
+    "title": "App3",
+    "baseurl":"/appdummy3",
+    "servicesbaseurl":"/appdummy3",
+    "url": "/appdummy3/data/opcionesmenu.json"
+  },
+  {
+    "id": "infosystem",
+    "title": "Información del sistema",
+    "baseurl":"",
+    "servicesbaseurl":"",
+    "url": "/data/opcionesinfosystem.json"
+  }
+
+]
