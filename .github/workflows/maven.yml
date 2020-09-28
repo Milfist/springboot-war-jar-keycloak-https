@@ -24,7 +24,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Test & publish code coverage
-      uses: paambaati/codeclimate-action@v2.7.1
+      uses: Milfist/springboot-war-jar-keycloak-https
       env:
         # Set CC_TEST_REPORTER_ID as secret of your repo
         CC_TEST_REPORTER_ID: ${{secrets.CODE_CLIMATE_TOKEN}}
