@@ -27,30 +27,14 @@ jobs:
       uses: paambaati/codeclimate-action@v2.7.1
       env:
         CC_TEST_REPORTER_ID: ${{secrets.CODE_CLIMATE_TOKEN}}
-        JACOCO_SOURCE_PATH: "${{github.workspace}}/src/main/java"
+        #JACOCO_SOURCE_PATH: "${{github.workspace}}/src/main/java"
       with:
-        # The report file must be there, otherwise Code Climate won't find it
-        coverageCommand: mvn install
         coverageLocations: ${{github.workspace}}/target/site/jacoco/jacoco.xml:jacoco
-        debug: true
 
     - name: Codecov
-        # You may pin to the exact commit or the version.
-        # uses: codecov/codecov-action@6004246f47ab62d32be025ce173b241cd84ac58e
       uses: codecov/codecov-action@v1.0.13
       with:
           name: springboot-war-jar-keycloak-https
           token: ${{secrets.CC_REPORTER_ID}}
           file: ${{github.workspace}}/target/site/jacoco/jacoco.xml
-        # Comma-separated list of files to upload
-        # files: # optional
-        # Directory to search for coverage reports.
-        # directory: # optional
           flags: unittests
-        # Write upload file to path before uploading
-        # path_to_write_report: # optional
-        # Environment variables to tag the upload with (e.g. PYTHON | OS,PYTHON)
-        # env_vars: # optional
-        # Specify whether or not CI build should fail if Codecov runs into an error during upload
-        # fail_ci_if_error: # optional
-
