@@ -21,23 +21,16 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B clean package --file pom.xml
 
     - name: Test & publish code coverage
       uses: paambaati/codeclimate-action@v2.7.1
       env:
         CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-        JACOCO_SOURCE_PATH: "${{github.workspace}}/src/main/java"
+        #JACOCO_SOURCE_PATH: "${{github.workspace}}/src/main/java"
       with:
-        coverageCommand: mvn test
-        coverageLocations: ${{github.workspace}}/target/site/jacoco/jacoco.xml:jacoco
-
-    - name: Test & publish code coverage 2
-      uses: MartinNuc/codeclimate-action@2
-      env:
-        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-      with:
-        coverageLocations: ${{github.workspace}}/target/site/jacoco/jacoco.xml:jacoco
+        #coverageCommand: mvn test
+        coverageLocations: ${{github.workspace}}/target/site/jacoco/jacoco.xml
 
     - name: Codecov
       uses: codecov/codecov-action@v1.0.13
