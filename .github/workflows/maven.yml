@@ -27,10 +27,10 @@ jobs:
       uses: paambaati/codeclimate-action@v2.7.1
       env:
         CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-        #JACOCO_SOURCE_PATH: "${{github.workspace}}/src/main/java"
+        JACOCO_SOURCE_PATH: "${{github.workspace}}/src/main/java/com/milfist/springbootservice"
       with:
         coverageCommand: mvn test
-        coverageLocations: ${{github.workspace}}/target/site/jacoco/jacoco.xml
+        coverageLocations: ${{github.workspace}}/target/site/jacoco/jacoco.xml:jacoco
         debug: true
 
     - name: Codecov
