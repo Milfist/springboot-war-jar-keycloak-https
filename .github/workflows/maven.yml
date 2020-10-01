@@ -26,10 +26,10 @@ jobs:
     - name: Test & publish code coverage
       uses: paambaati/codeclimate-action@v2.7.1
       env:
-        CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-        JACOCO_SOURCE_PATH: "${{github.workspace}}/src/main/java/com/milfist/springbootservice"
+        CC_TEST_REPORTER_ID: "4f212584f3b9fb97825fbcf9ecae951cb3b5de71b6ab502cf9feee7932a5babe"
+        JACOCO_SOURCE_PATH: "${{github.workspace}}/src/main/java"
       with:
-        coverageCommand: mvn test
+        coverageCommand: mvn install
         coverageLocations: ${{github.workspace}}/target/site/jacoco/jacoco.xml:jacoco
         debug: true
 
