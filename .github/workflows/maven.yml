@@ -24,12 +24,12 @@ jobs:
       run: mvn -B clean package --file pom.xml
 
     - name: Test & publish code coverage
-      uses: paambaati/codeclimate-action@v2.7.1
+      uses: paambaati/codeclimate-action@v2.7.3
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         JACOCO_SOURCE_PATH: "${{github.workspace}}/src/main/java"
       with:
-        coverageCommand: mvn install
+        #coverageCommand: mvn test
         coverageLocations: ${{github.workspace}}/target/site/jacoco/jacoco.xml:jacoco
         debug: true
 
